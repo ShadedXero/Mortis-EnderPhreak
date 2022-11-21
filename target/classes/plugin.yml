@@ -1,0 +1,8 @@
+name: MortisEnderPhreak
+version: '1.0'
+main: me.none030.mortisenderphreak.MortisEnderPhreak
+api-version: 1.13
+commands:
+  enderphreak:
+    aliases:
+      - mortisenderphreak

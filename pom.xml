@@ -6,7 +6,7 @@
 
     <groupId>com.mortisdevelopment</groupId>
     <artifactId>MortisEnderPhreak</artifactId>
-    <version>2.1</version>
+    <version>2.5</version>
     <packaging>jar</packaging>
 
     <name>MortisEnderPhreak</name>
@@ -40,7 +40,7 @@
                         <configuration>
                             <relocations>
                                 <relocation>
-                                    <pattern>com.h2database.h2</pattern>
+                                    <pattern>org.h2</pattern>
                                     <shadedPattern>com.mortisdevelopment.mortisenderphreak.h2</shadedPattern>
                                 </relocation>
                             </relocations>

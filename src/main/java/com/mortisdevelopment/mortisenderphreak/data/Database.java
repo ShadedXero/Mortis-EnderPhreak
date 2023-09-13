@@ -1,6 +1,7 @@
 package com.mortisdevelopment.mortisenderphreak.data;
 
 import java.sql.*;
+import java.util.Properties;
 
 public abstract class Database {
 
@@ -16,6 +17,17 @@ public abstract class Database {
         this.database = database;
         this.username = username;
         this.password = password;
+    }
+
+    public Properties getProperties() {
+        Properties properties = new Properties();
+        if (username != null) {
+            properties.setProperty("user", username);
+        }
+        if (password != null) {
+            properties.setProperty("password", password);
+        }
+        return properties;
     }
 
     public abstract Connection getConnection();

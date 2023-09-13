@@ -2,7 +2,6 @@ package com.mortisdevelopment.mortisenderphreak.data;
 
 import java.io.File;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class H2Database extends Database {
@@ -20,10 +19,10 @@ public class H2Database extends Database {
             return connection;
         }
         try {
-            Class.forName("org.h2.Driver");
-            this.connection = DriverManager.getConnection("jdbc:h2:file:" + file.getAbsolutePath(), getUsername(), getPassword());
+            org.h2.Driver driver = new org.h2.Driver();
+            this.connection = driver.connect("jdbc:h2:file:" + file.getAbsolutePath(), getProperties());
             return connection;
-        }catch (SQLException | ClassNotFoundException exp) {
+        }catch (SQLException exp) {
             exp.printStackTrace();
         }
         return null;
